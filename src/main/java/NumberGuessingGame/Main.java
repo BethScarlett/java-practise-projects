@@ -10,6 +10,7 @@ public class Main {
         while(CommandRunner.startGame()) {
             Game game = new NumberGuesser("Number Guesser");
             game.play();
+            System.out.println("Would you like to play again? Y for yes or N for no: ");
         }
     }
 }
