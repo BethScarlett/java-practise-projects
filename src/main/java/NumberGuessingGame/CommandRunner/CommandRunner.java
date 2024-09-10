@@ -6,7 +6,6 @@ public class CommandRunner {
 
     public static boolean startGame () {
         String input;
-        System.out.println("Welcome to a simple number guessing game. Would you like to play? Type y to play or n to leave");
         Scanner scanner = new Scanner(System.in);
         input = scanner.nextLine();
 

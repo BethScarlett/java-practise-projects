@@ -13,21 +13,35 @@ public class NumberGuesser extends Game {
 
     @Override
     public void play() {
-        System.out.println("Ok, let's play.");
-
         int numToGuess = GenerateRandomNumber.generateNum();
-
-        System.out.println("A random number has been selected. Please enter your guess: ");
+        int userGuess;
+        boolean isGuessed = false;
 
         Scanner scanner = new Scanner(System.in);
 
-        int userGuess = scanner.nextInt();
+        System.out.println("Ok, let's play.");
+        System.out.println("A random number has been selected. Please enter your guess: ");
 
-        while (!CommandRunner.validateGuess(userGuess, numToGuess).equals("Correct")) {
-            System.out.println("Your guess was: " + CommandRunner.validateGuess(userGuess, numToGuess) + ". Try again: ");
+        while (!isGuessed) {
+            while (!scanner.hasNextInt()) {
+                System.out.println("Guess must be a number.");
+                scanner.next();
+            }
+
             userGuess = scanner.nextInt();
-        }
 
-        System.out.println("Congrats you've guess the number!");
+            String result = CommandRunner.validateGuess(userGuess, numToGuess);
+
+            switch (result) {
+                case "Too Low" :
+                case "Too High" :
+                    System.out.println("Your guess was: " + result + ". Try again: ");
+                    break;
+                case "Correct":
+                    System.out.println("Congrats you've guessed the number!");
+                    isGuessed = true;
+                    break;
+            }
+        }
     }
 }
