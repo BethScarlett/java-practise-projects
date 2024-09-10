@@ -44,6 +44,12 @@ public class GenerateRandomNumber {
     }
 
     public static int generateNum (int origin, int bound) {
+        if(origin > bound) {
+            System.out.println("Switching numbers due to min being greater");
+            int temp = origin;
+            origin = bound;
+            bound = temp;
+        }
         return ThreadLocalRandom.current().nextInt(origin, bound);
     }
 }
