@@ -13,7 +13,7 @@ public class NumberGuesser extends Game {
 
     @Override
     public void play() {
-        int numToGuess = GenerateRandomNumber.generateNum();
+        int numToGuess = GenerateRandomNumber.generateRandNum();
         int userGuess;
         boolean isGuessed = false;
 
