@@ -26,7 +26,7 @@ class CustomerTest {
         Customer test = new Customer("Test", "Private", 50);
 
         String result = test.depositMoney(-20);
-        assertEquals("Failure-Negative Withdrawal", result);
+        assertEquals("Failure-Negative Input", result);
         assertEquals(50, test.getBalance());
     }
 
@@ -59,7 +59,7 @@ class CustomerTest {
         Customer test = new Customer("Test", "Private", 50);
 
         String result = test.withdrawMoney(-40);
-        assertEquals("Failure-Negative Withdrawal", result);
+        assertEquals("Failure-Negative Input", result);
         assertEquals(50, test.getBalance());
     }
 }

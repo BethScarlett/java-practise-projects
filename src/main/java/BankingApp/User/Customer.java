@@ -15,7 +15,7 @@ public class Customer extends User implements Transactions {
 
     public String depositMoney(double toDeposit) {
         if(toDeposit < 0) {
-            return "Failure-Negative Withdrawal";
+            return "Failure-Negative Input";
         } else {
             setBalance(getBalance() + toDeposit);
             return "Success";
@@ -26,7 +26,7 @@ public class Customer extends User implements Transactions {
         if(toWithdraw > getBalance()) {
             return "Failure-Low Balance";
         } else if(toWithdraw < 0) {
-            return "Failure-Negative Withdrawal";
+            return "Failure-Negative Input";
         } else {
             setBalance(getBalance() - toWithdraw);
             return "Success";
