@@ -13,7 +13,13 @@ public class Customer extends User implements Transactions {
         setBalance(getBalance() + toDeposit);
     }
 
-    public void withdrawMoney(float toWithdraw) {
-        setBalance(getBalance() - toWithdraw);
+    public String withdrawMoney(float toWithdraw) {
+        if(toWithdraw > getBalance() || toWithdraw < 0) {
+            return "Failure";
+        } else {
+            setBalance(getBalance() - toWithdraw);
+            return "Success";
+        }
+
     }
 }
