@@ -1,8 +1,16 @@
 package BankingApp.CommandRunner;
 
+import BankingApp.User.Customer;
+
 import java.util.Scanner;
 
 public class CommandRunner {
+
+    static Customer customer;
+
+    public CommandRunner(Customer customer) {
+        CommandRunner.customer = customer;
+    }
 
     public static boolean run() {
         Scanner sc =  new Scanner(System.in);
@@ -16,7 +24,7 @@ public class CommandRunner {
 
         switch (input) {
             case 1:
-                //Run See Balance
+                customer.seeBalance();
                 break;
             case 2:
                 //Run Deposit Amount

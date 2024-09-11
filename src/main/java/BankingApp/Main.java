@@ -1,6 +1,7 @@
 package BankingApp;
 
 import BankingApp.CommandRunner.CommandRunner;
+import BankingApp.User.Customer;
 
 public class Main {
     public static void main(String[] args) {
@@ -10,8 +11,15 @@ public class Main {
         System.out.println("3 - Withdraw Amount");
         System.out.println("4 - Exit app");
 
-        while(CommandRunner.run()) {
-            System.out.println();
+        Customer userOne = new Customer("Tiffany", "Business", 50000);
+
+        CommandRunner ncr = new CommandRunner(userOne);
+
+        while(ncr.run()) {
+            System.out.println("1 - See Balance");
+            System.out.println("2 - Deposit Amount");
+            System.out.println("3 - Withdraw Amount");
+            System.out.println("4 - Exit app");
         }
 
     }
