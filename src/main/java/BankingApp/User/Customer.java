@@ -9,13 +9,20 @@ public class Customer extends User implements Transactions {
         System.out.println("You have £" + getBalance() + " in your account.");
     }
 
-    public void depositMoney(float toDeposit) {
-        setBalance(getBalance() + toDeposit);
+    public String depositMoney(float toDeposit) {
+        if(toDeposit < 0) {
+            return "Failure-Negative Withdrawal";
+        } else {
+            setBalance(getBalance() + toDeposit);
+            return "Success";
+        }
     }
 
     public String withdrawMoney(float toWithdraw) {
-        if(toWithdraw > getBalance() || toWithdraw < 0) {
-            return "Failure";
+        if(toWithdraw > getBalance()) {
+            return "Failure-Low Balance";
+        } else if(toWithdraw < 0) {
+            return "Failure-Negative Withdrawal";
         } else {
             setBalance(getBalance() - toWithdraw);
             return "Success";

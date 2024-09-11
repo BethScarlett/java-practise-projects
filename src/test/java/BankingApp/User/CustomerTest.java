@@ -21,6 +21,16 @@ class CustomerTest {
     }
 
     @Test
+    @DisplayName("Transaction fails if deposit amount is negative")
+    void depositMoney_negativeInput_failureReturned() {
+        Customer test = new Customer("Test", "Private", 50);
+
+        String result = test.depositMoney(-20);
+        assertEquals("Failure-Negative Withdrawal", result);
+        assertEquals(50, test.getBalance());
+    }
+
+    @Test
     @DisplayName("Correct amount of money is withdrawn")
     void withdrawMoney_validInput_balanceCorrectlyChanges() {
         Customer test = new Customer("Test", "Private", 50);
@@ -39,7 +49,7 @@ class CustomerTest {
         Customer test = new Customer("Test", "Private", 50);
 
         String result = test.withdrawMoney(70);
-        assertEquals("Failure", result);
+        assertEquals("Failure-Low Balance", result);
         assertEquals(50, test.getBalance());
     }
 
@@ -49,7 +59,7 @@ class CustomerTest {
         Customer test = new Customer("Test", "Private", 50);
 
         String result = test.withdrawMoney(-40);
-        assertEquals("Failure", result);
+        assertEquals("Failure-Negative Withdrawal", result);
         assertEquals(50, test.getBalance());
     }
 }
