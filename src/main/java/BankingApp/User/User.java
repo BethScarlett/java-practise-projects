@@ -3,9 +3,9 @@ package BankingApp.User;
 public abstract class User {
     private String name;
     private String accountType;
-    private float balance;
+    private double balance;
 
-    public User(String name, String accountType, float balance) {
+    public User(String name, String accountType, double balance) {
         this.name = name;
         this.accountType = accountType;
         this.balance = balance;
@@ -27,11 +27,11 @@ public abstract class User {
         this.accountType = accountType;
     }
 
-    public float getBalance() {
+    public double getBalance() {
         return balance;
     }
 
-    public void setBalance(float balance) {
+    public void setBalance(double balance) {
         this.balance = balance;
     }
 }

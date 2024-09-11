@@ -12,7 +12,7 @@ class CustomerTest {
     void depositMoney_validInput_balanceCorrectlyChanges() {
         Customer test = new Customer("Test", "Private", 50);
 
-        float initialAmount = test.getBalance();
+        double initialAmount = test.getBalance();
         assertEquals(50, initialAmount);
 
         test.depositMoney(20);
@@ -35,7 +35,7 @@ class CustomerTest {
     void withdrawMoney_validInput_balanceCorrectlyChanges() {
         Customer test = new Customer("Test", "Private", 50);
 
-        float initialAmount = test.getBalance();
+        double initialAmount = test.getBalance();
         assertEquals(50, initialAmount);
 
         test.withdrawMoney(20);
