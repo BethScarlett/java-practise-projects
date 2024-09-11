@@ -1,13 +1,34 @@
 package BankingApp.CommandRunner;
 
+import java.util.Scanner;
+
 public class CommandRunner {
 
     public static boolean run() {
-        System.out.println("Welcome to the my bank app! Please select one of the following options using 1, 2, 3 or 4: ");
-        System.out.println("1 - See Balance");
-        System.out.println("2 - Deposit Amount");
-        System.out.println("3 - Withdraw Amount");
-        System.out.println("4 - Exit app");
+        Scanner sc =  new Scanner(System.in);
+
+        while (!sc.hasNextInt()) {
+            System.out.println("Invalid input. Please select 1, 2, 3 or 4 and press enter: ");
+            sc.next();
+        }
+
+        int input = sc.nextInt();
+
+        switch (input) {
+            case 1:
+                //Run See Balance
+                break;
+            case 2:
+                //Run Deposit Amount
+                break;
+            case 3:
+                //Run Withdraw Amount
+                break;
+            case 4:
+                return false;
+            default:
+                System.out.println("Your input is outside the available options. Please select 1, 2, 3 or 4 and press enter: ");
+        }
         return true;
     }
 
