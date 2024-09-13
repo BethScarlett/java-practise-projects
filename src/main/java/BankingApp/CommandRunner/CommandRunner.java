@@ -12,7 +12,7 @@ public class CommandRunner {
         CommandRunner.customer = customer;
     }
 
-    public static boolean run() {
+    public boolean run() {
         Scanner sc =  new Scanner(System.in);
 
         while (!sc.hasNextInt()) {
