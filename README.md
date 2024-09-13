@@ -5,12 +5,19 @@ A collection of mini projects I've used to build up and maintain my Java knowled
 ## Projects include:
 
 - Number Guessing Game
+- Simple Bank App
 
 ### Number Guessing Game
 
 This is a very simple game, in which the goal is to correctly guess a randomly generated number. The number itself is generated using the ThreadLocalRandom method, with the default origin being 0 and bound being 101; although overloading is also utilised to enable a custom number range should the user desire it. 
 
 A very rudamentary command runner is also utilised in order to capture the user's choice in whether to start the game, as well as to validate and return the results of their guess. 
+
+### Simple Bank App
+
+A rudimentary banking application which utilises a command runner to enable three main functions, seeing a users balance, depositing money and withdrawing money. Outside of the command runner, this application utilises a class called "Customer", which inherits from a super class called "User" as well as implementing a "Transactions" interface. Constructing matters this way allows for futher expansion through other potential types of accounts, such as employees, with minimal effort required to get them running to the desired standard.
+
+The purpose of this application apart from the reasons mentioned above is for demonstration purposes, so the application comes pre-baked with a Customer object containg a name("Tiffany"), business account type and 50,000.00 money. These values can be adjusted in the main class if required.
 
 ## How to use:
 
